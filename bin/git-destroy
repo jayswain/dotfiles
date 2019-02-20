@@ -1,0 +1,32 @@
+#!/bin/bash
+
+#
+# Written by Jay Swain
+#
+# [USE AT YOUR OWN RISK]
+#
+# Clean up all your branches and get yes/no dialogs for each
+#   $ git br | xargs -n 1 -o git destroy
+#
+
+if [ -z "$1" ]; then
+  echo "👹 " missing argument 'branch name' required 👹  && exit 1
+fi
+
+if [ $1 = "master" ]; then
+  echo "🙅  You can't do that 🙅 " && exit 1
+fi
+
+function destroy_branch {
+  git push origin :$1
+  git branch -D $1
+  echo "👹 " $1 has been destroyed 👹  && exit 1
+}
+
+echo are you sure you want to destroy $1 locally and remotely?
+select yn in "Yes" "No"; do
+  case $yn in
+    Yes ) destroy_branch $1;;
+    No ) exit;;
+  esac
+done
