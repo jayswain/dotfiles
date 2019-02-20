@@ -1,0 +1,21 @@
+[core]
+	editor = /usr/bin/vim
+	excludesfile = /Users/royclone/.gitignore_global
+[user]
+  name = Jay Swain
+  email = github@jayswain.com
+[color]
+  branch = auto
+  diff = auto
+  interactive = auto
+  status = auto
+[merge]
+  tool = opendiff
+[alias]
+  st = status
+  br = branch
+  put = push origin HEAD
+  co = checkout
+
+[init]
+	templatedir = /Users/royclone/.git-template-with-git-hooks
