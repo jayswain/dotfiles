@@ -1,0 +1,15 @@
+ack.vim
+ctrlp.vim
+nerdcommenter
+nerdtree
+vim-buffergator
+vim-colors-solarized
+vim-fugitive
+vim-gitgutter
+vim-gutentags
+vim-jsx
+vim-rails
+vim-ruby
+vim-ruby-fold
+vim-styled-components
+vim-wakatime
