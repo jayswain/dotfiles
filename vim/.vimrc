@@ -4,15 +4,17 @@ syntax on
 filetype plugin indent on
 
 "Theme
-let g:solarized_termcolors=256
 syntax enable
-colorscheme solarized
 set background=dark
+colorscheme solarized
 
 "Tabs - this can be overridden for language specific in .vim/ftplugin
-set tabstop=2
-set shiftwidth=4
+set tabstop=2 shiftwidth=2 softtabstop=2
 set expandtab
+set autoindent
+
+"Backspace
+set backspace=indent,eol,start
 
 "Ruby
 set nocompatible      " We're running Vim, not Vi!
@@ -40,6 +42,7 @@ imap jk <Esc>
 let g:ctrlp_custom_ignore = {
     \ 'dir':  '\.git$\|\.hg$\|\.svn$\|bower_components$\|dist$\|node_modules$\|project_files$\|test$'
     \ }
+nnoremap <leader>. :CtrlPTag<cr>
 
 "Moving lines"
 nnoremap <C-j> :m .+1<CR>==
@@ -65,6 +68,8 @@ autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists("s:std_in
 
 "Searching
 :set hlsearch
+:set ignorecase
+:set smartcase
 
 "Ack
 "Use AG when available
@@ -78,3 +83,31 @@ map <leader>A :Ack! "<C-r>=expand('<cword>')<CR>"
 "Window sizing
 map + <c-w>>
 map - <c-w><
+
+"Status bar
+set laststatus=2
+
+"Backup and swap
+set backup 
+set backupdir=~/.vim/backup//
+set backupskip=/tmp/*,/private/tmp/* 
+set directory=~/.vim/swap//
+set undodir=~/.vim/undo//
+set writebackup
+
+"Copy/Paste from/to clipboard 
+map <C-c> "+y<CR>
+
+"Whitespace
+:highlight ExtraWhitespace ctermbg=red guibg=red
+:au InsertEnter * match ExtraWhitespace /\s\+\%#\@<!$/
+:au InsertLeave * match ExtraWhitespace /\s\+$/
+
+"display tabs
+set list listchars=tab:→\ 
+
+"Syntax Highlighting
+augroup filetype javascript syntax=javascript
+au BufRead,BufNewFile *.md set filetype=markdown
+au BufRead,BufNewFile *.handlebars,*.hbs set ft=html syntax=handlebars
+au BufNewFile,BufRead *.ejs set filetype=html
