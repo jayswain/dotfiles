@@ -1,9 +1,10 @@
 [core]
-	editor = /usr/bin/vim
-	excludesfile = /Users/royclone/.gitignore_global
+  editor = /usr/bin/vim
+  excludesfile = /Users/roy/.gitignore_global
+  autocrlf = input
 [user]
-  name = Jay Swain
-  email = github@jayswain.com
+  name = "Jay Swain"
+  email = jswain@gitlab.com
 [color]
   branch = auto
   diff = auto
@@ -16,6 +17,5 @@
   br = branch
   put = push origin HEAD
   co = checkout
-
 [init]
-	templatedir = /Users/royclone/.git-template-with-git-hooks
+	templatedir = /Users/roy/.git-template-with-git-hooks

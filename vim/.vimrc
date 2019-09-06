@@ -58,6 +58,7 @@ set number
 "NerdTree"
 map <Leader>o :NERDTreeFind<CR>
 map <Leader>n :NERDTreeToggle<CR>
+let NERDTreeShowHidden=1
 
 "Close NerdTree if I close a file and its left open
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
