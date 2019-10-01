@@ -5,6 +5,7 @@
 [user]
   name = "Jay Swain"
   email = jswain@gitlab.com
+	signingkey = D0C68E2C6CAB75AB
 [color]
   branch = auto
   diff = auto
@@ -19,3 +20,7 @@
   co = checkout
 [init]
 	templatedir = /Users/roy/.git-template-with-git-hooks
+[commit]
+	gpgsign = true
+[gpg]
+	program = gpg
