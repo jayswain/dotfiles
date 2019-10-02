@@ -12,7 +12,7 @@
   interactive = auto
   status = auto
 [merge]
-  tool = opendiff
+  tool = meld
 [alias]
   st = status
   br = branch
