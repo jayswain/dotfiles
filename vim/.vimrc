@@ -40,7 +40,8 @@ imap jk <Esc>
 
 "CTRLP
 let g:ctrlp_custom_ignore = {
-    \ 'dir':  '\.git$\|\.hg$\|\.svn$\|bower_components$\|dist$\|node_modules$\|project_files$\|test$'
+    \ 'dir':  '\.git$\|\.hg$\|\.svn$\|bower_components$\|dist$\|node_modules$\|project_files$\|test$\|spec\/fixtures\/vcr_cassettes$\|log$',
+    \ 'file': '\v\.(orig)$',
     \ }
 nnoremap <leader>. :CtrlPTag<cr>
 
